@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgomez-d <jgomez-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 04:07:37 by jgomez-d          #+#    #+#             */
-/*   Updated: 2025/10/20 23:23:49 by jgomez-d         ###   ########.fr       */
+/*   Created: 2025/10/20 19:38:46 by jgomez-d          #+#    #+#             */
+/*   Updated: 2025/10/20 23:28:32 by jgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "PhoneBook.hpp"
 
-# include "Contacts.hpp"
-
-class PhoneBook
+PhoneBook::PhoneBook()
 {
-	private:
-		Contact	contacts_[8];
-		size_t	i_;
-		size_t	n_;
-	public:
-		PhoneBook();
-		~PhoneBook();
-		void	PhoneBook::monitor();
-		void	PhoneBook::add();
-		void	PhoneBook::search();
-};
+	
+}
 
-#endif // PHONEBOOK_HPP
+PhoneBook::~PhoneBook(){}
+
+void	PhoneBook::monitor()
+{
+	std::string	buff;
+	do
+	{
+		std::getline(std::cin, buff);
+		if (buff == "ADD")
+			add();
+		if (buff == "SEARCH")
+			search();
+	} while (buff != "EXIT");
+}
+
+void	PhoneBook::add()
+{
+	i_
+}
+
+void	PhoneBook::search()
+{
+	
+}

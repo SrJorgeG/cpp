@@ -1,7 +1,7 @@
 NAME = megaphone
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = megaphone.cpp
+SRCS = main.cpp Contacts.cpp PhoneBook.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
@@ -9,8 +9,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CPP) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -I$(LIB_DIR) -c $< -o $@
+%.o: %.cpp
+	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)

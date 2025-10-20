@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgomez-d <jgomez-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 04:07:37 by jgomez-d          #+#    #+#             */
-/*   Updated: 2025/10/20 23:23:49 by jgomez-d         ###   ########.fr       */
+/*   Created: 2025/10/19 16:10:50 by jgomez-d          #+#    #+#             */
+/*   Updated: 2025/10/20 23:27:36 by jgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "PhoneBook.hpp"
 
-# include "Contacts.hpp"
-
-class PhoneBook
+int main(void)
 {
-	private:
-		Contact	contacts_[8];
-		size_t	i_;
-		size_t	n_;
-	public:
-		PhoneBook();
-		~PhoneBook();
-		void	PhoneBook::monitor();
-		void	PhoneBook::add();
-		void	PhoneBook::search();
-};
-
-#endif // PHONEBOOK_HPP
+	
+}
