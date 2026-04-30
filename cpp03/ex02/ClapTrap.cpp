@@ -1,11 +1,11 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _name("Default"), _hitPoints(10), _energyPoints(10), _ad(0)
+ClapTrap::ClapTrap() : _name("Default"), _hitPoints(100), _energyPoints(100), _ad(30)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _ad(0)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(100), _energyPoints(100), _ad(30)
 {
 	std::cout << "Name constructor called" << std::endl;
 }
@@ -85,7 +85,7 @@ void	ClapTrap::attack(const std::string& target)
 		return;
 	}
 	--_energyPoints;
-	std::cout << "ClapTrap " << _name << " attacks " << target 
+	std::cout << "ClapTrap " << _name << " attacks " << target
 	<< ", causing " << _ad << " points of damage!" << std::endl;
 }
 
@@ -99,12 +99,14 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	if (amount > _hitPoints)
 	{
 		_hitPoints = 0;
-		std::cout << "ClapTrap " << _name << " got attacked, recieving " << amount << " points of damage!, and unfortunaly died on duty." << std::endl;
+		std::cout << "ClapTrap " << _name << " got attacked, recieving " << amount
+		<< " points of damage!, and unfortunaly died on duty." << std::endl;
 	}
 	else
 	{
 		_hitPoints -= amount;
-		std::cout << "ClapTrap " << _name << " got attacked, recieving " << amount << " points of damage!" << std::endl;
+		std::cout << "ClapTrap " << _name << " got attacked, recieving " << amount
+		<< " points of damage!" << std::endl;
 	}
 }
 
@@ -117,18 +119,19 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	}	
 	if (!_energyPoints)
 	{
-		std::cout << "ClapTrap " << _name << " has run out of energy." << std::endl;
+		std::cout << "ClapTrap " << _name << " is run out of energy." << std::endl;
 		return;
 	}
-	std::cout << "ClapTrap " << _name << " repaired " << amount << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << _name << " repaired " << amount
+	<< " points of damage!" << std::endl;
 	_hitPoints += amount;
 	--_energyPoints;
 }
 
 void	ClapTrap::showStatus() const
 {
-	std::cout << "ClapTrap: " << _name 
-	<< "\nHitpoints remaining: " << _hitPoints 
-	<< "\nEnergy points remaining: " << _energyPoints 
-	<< "\nAttack damage: " << _ad << std::endl;
+	std::cout << "ClapTrap: " << _name
+	<< "\nHitpoints remaining: " << _hitPoints
+	<< "\nEnergy points remaining: " << _energyPoints
+	<<"\nAttack damage: " << _ad << std::endl;
 }

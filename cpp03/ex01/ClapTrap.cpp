@@ -85,7 +85,8 @@ void	ClapTrap::attack(const std::string& target)
 		return;
 	}
 	--_energyPoints;
-	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _ad << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << _name << " attacks " << target
+	<< ", causing " << _ad << " points of damage!" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -98,12 +99,14 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	if (amount > _hitPoints)
 	{
 		_hitPoints = 0;
-		std::cout << "ClapTrap " << _name << " got attacked, recieving " << amount << " points of damage!, and unfortunaly died on duty." << std::endl;
+		std::cout << "ClapTrap " << _name << " got attacked, recieving " << amount
+		<< " points of damage!, and unfortunaly died on duty." << std::endl;
 	}
 	else
 	{
 		_hitPoints -= amount;
-		std::cout << "ClapTrap " << _name << " got attacked, recieving " << amount << " points of damage!" << std::endl;
+		std::cout << "ClapTrap " << _name << " got attacked, recieving " << amount
+		<< " points of damage!" << std::endl;
 	}
 }
 
@@ -119,12 +122,16 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "ClapTrap " << _name << " is run out of energy." << std::endl;
 		return;
 	}
-	std::cout << "ClapTrap " << _name << " repaired " << amount << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << _name << " repaired " << amount
+	<< " points of damage!" << std::endl;
 	_hitPoints += amount;
 	--_energyPoints;
 }
 
 void	ClapTrap::showStatus() const
 {
-	std::cout << "ClapTrap: " << _name << "\nHitpoints remaining: " << _hitPoints << "\nEnergy points remaining: " << _energyPoints << "\nAttack damage: " << _ad << std::endl;
+	std::cout << "ClapTrap: " << _name
+	<< "\nHitpoints remaining: " << _hitPoints
+	<< "\nEnergy points remaining: " << _energyPoints
+	<<"\nAttack damage: " << _ad << std::endl;
 }
