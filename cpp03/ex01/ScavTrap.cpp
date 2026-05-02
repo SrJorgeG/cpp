@@ -2,17 +2,23 @@
 
 ScavTrap::ScavTrap() : ClapTrap(), _guardGateFlag(false)
 {
-
+	setHitPoints(100);
+	setEnergyPoints(50);
+	setAd(20);
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name), _guardGateFlag(false)
 {
-
+	setHitPoints(100);
+	setEnergyPoints(50);
+	setAd(20);
 }
 
 ScavTrap::ScavTrap(const ScavTrap&  other) : ClapTrap(other), _guardGateFlag(other._guardGateFlag)
 {
-
+	setHitPoints(other.getHitPoints());
+	setAd(other.getAd());
+	setEnergyPoints(other.getEnergyPoints());
 }
 
 ScavTrap::~ScavTrap()
@@ -26,6 +32,9 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap&  other)
 	{
 		ClapTrap::operator=(other);
 		setGuardGateFlag(other.getGuardGateFlag());
+		setHitPoints(other.getHitPoints());
+		setEnergyPoints(other.getEnergyPoints());
+		setAd(other.getAd());
 	}
 	return *this;
 }

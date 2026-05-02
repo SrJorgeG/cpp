@@ -2,28 +2,39 @@
 
 FragTrap::FragTrap() : ClapTrap()
 {
-
+	setHitPoints(100);
+	setEnergyPoints(100);
+	setAd(30);
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-
+	setHitPoints(100);
+	setEnergyPoints(100);
+	setAd(30);
 }
 
 FragTrap::FragTrap(const FragTrap&  other) : ClapTrap(other) 
 {
-
+	setHitPoints(other.getHitPoints());
+	setEnergyPoints(other.getEnergyPoints());
+	setAd(other.getAd());
 }
 
 FragTrap::~FragTrap()
 {
-}
+} 
 
 
 FragTrap&	FragTrap::operator=(const FragTrap&  other)
 {
 	if (this  !=  &other)
+	{
 		ClapTrap::operator=(other);
+		setHitPoints(other.getHitPoints());
+		setEnergyPoints(other.getEnergyPoints());
+		setAd(other.getAd());
+	}
 	return *this;
 }
 
