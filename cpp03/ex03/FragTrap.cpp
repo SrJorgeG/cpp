@@ -3,14 +3,14 @@
 FragTrap::FragTrap() : ClapTrap()
 {
 	setHitPoints(100);
-	setEnergyPoints(100);
+	setEnergyPoints(50);
 	setAd(30);
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	setHitPoints(100);
-	setEnergyPoints(100);
+	setEnergyPoints(50);
 	setAd(30);
 }
 

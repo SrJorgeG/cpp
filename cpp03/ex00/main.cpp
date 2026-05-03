@@ -1,11 +1,42 @@
 #include "ClapTrap.hpp"
 
-int main( void ) 
+int main(void)
 {
-	ClapTrap a("A");
-	ClapTrap* b = &a;
-	b->attack("target");
+	ClapTrap clap("CL4P-TP");
 
-	a.showStatus();
+	clap.showStatus();
+
+	clap.attack("Enemy1");
+	clap.showStatus();
+
+	clap.attack("Enemy2");
+	clap.showStatus();
+
+	clap.takeDamage(5);
+	clap.showStatus();
+
+	clap.beRepaired(3);
+	clap.showStatus();
+
+	clap.takeDamage(8);
+	clap.showStatus();
+
+	clap.beRepaired(10);
+	clap.showStatus();
+
+	for (int i = 0; i < 8; i++)
+		clap.attack("Target");
+	clap.showStatus();
+
+	clap.beRepaired(5);
+	clap.showStatus();
+
+	ClapTrap clap2(clap);
+	clap2.showStatus();
+
+	ClapTrap clap3;
+	clap3 = clap2;
+	clap3.showStatus();
+
 	return 0;
 }

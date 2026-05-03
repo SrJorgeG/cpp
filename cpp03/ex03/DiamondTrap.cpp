@@ -1,16 +1,19 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap("Default"), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap() : ClapTrap("Default"), ScavTrap("Default"), FragTrap("Default")
 {
 	std::cout << "Default constructor called" << std::endl;
+	setHitPoints(100);
+	setEnergyPoints(50);
+	setAd(30);
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), FragTrap(name)
 {
 	std::cout << "Name constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap&  other) :  ClapTrap(other), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap(const DiamondTrap&  other) :  ClapTrap(other), ScavTrap(other), FragTrap(other)
 {
 	std::cout << "Copy constructor called" << std::endl;
 }
@@ -31,6 +34,16 @@ DiamondTrap&	DiamondTrap::operator=(const DiamondTrap&  other)
 	return	*this;
 }
 
+std::string		DiamondTrap::getName() const
+{
+	return _name;
+}
+
+void	DiamondTrap::setName(std::string name)
+{
+	_name = name;
+}
+
 void	DiamondTrap::showStatus() const
 {
 	std::cout << "DiamondTrap: " << getName() 
@@ -42,4 +55,11 @@ void	DiamondTrap::showStatus() const
 void DiamondTrap::attack(const std::string& target)
 {
     ScavTrap::attack(target);
+}
+
+void DiamondTrap::whoAmI()
+{
+	
+	std::cout << "Name:" << _name 
+	<< "\nClapTrap name:" << ClapTrap::_name << "_clap_name" << std::endl;
 }
