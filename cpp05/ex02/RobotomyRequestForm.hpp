@@ -10,7 +10,7 @@ private:
 	std::string _target;
 
 protected:
-	virtual void action() const;
+	void action() const;
 
 public:
 	RobotomyRequestForm();

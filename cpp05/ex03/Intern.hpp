@@ -14,7 +14,7 @@ private:
 		FormCreator	creator;
 	};
 
-	static FormType	formTypes[];
+	static FormType		formTypes[];
 	static const int	numFormTypes;
 
 	static AForm*	createShrubberyCreationForm(const std::string& target);
