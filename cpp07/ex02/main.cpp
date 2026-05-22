@@ -4,7 +4,6 @@
 #include <cstdlib>
 #include "Array.hpp"
 
-/*
 
 int main(void)
 {
@@ -139,7 +138,9 @@ int main(void)
 	std::cout << "\n=== All tests completed ===" << std::endl;
 	return 0;
 }
-*/
+
+// main proporcionado junto al subject en la intra, fuerza 2 excepciones
+/* 
 
 #define MAX_VAL 750
 int main(int, char**)
@@ -191,3 +192,5 @@ int main(int, char**)
     delete [] mirror;//
     return 0;
 }
+
+*/
