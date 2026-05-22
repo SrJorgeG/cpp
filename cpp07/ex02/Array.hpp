@@ -1,5 +1,4 @@
-#ifndef ARRAY_HPP
-# define ARRAY_HPP
+#pragma once
 
 #include <exception>
 
@@ -59,7 +58,7 @@ public:
 
 	T& operator[](unsigned int index)
 	{
-		if (index >= _size)
+		if (index > _size)
 		{
 			throw std::exception();
 		}
@@ -68,7 +67,7 @@ public:
 
 	const T& operator[](unsigned int index) const
 	{
-		if (index >= _size)
+		if (index > _size)
 		{
 			throw std::exception();
 		}
@@ -80,5 +79,3 @@ public:
 		return _size;
 	}
 };
-
-#endif
